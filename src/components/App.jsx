@@ -17,12 +17,6 @@ export const App = () => {
     localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
 
-  useEffect(() => {
-    return () => {
-      localStorage.removeItem("contacts");
-    }
-  }, []);
-
   const formSubmitHandler = (contact) => {
     if (isDublicate(contact)) {
       return alert(`${contact.name} is already in contacts.`);
